@@ -8,10 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LCY2013/blockchain.git"
+    "url": "git+https://github.com/LCY2013/blockchain.git"
   },
   "private": true,
   "dependencies": {
     "kapitalize": "^0.3.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/LCY2013/blockchain/issues"
+  },
+  "homepage": "https://github.com/LCY2013/blockchain#readme",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
