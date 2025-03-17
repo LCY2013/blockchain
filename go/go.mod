@@ -1,11 +1,9 @@
 module github.com/LCY2013/blockchain/go
 
-go 1.23.0
-
-toolchain go1.23.2
+go 1.24.1
 
 require (
-	github.com/btcsuite/btcd v0.24.2
+	github.com/btcsuite/btcd v0.24.3-0.20250311173052-cba88226f49d
 	github.com/btcsuite/btcd/btcutil v1.1.6
 )
 
