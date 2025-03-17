@@ -499,3 +499,8 @@ fabric.properties
 /.idea/.gitignore
 /.idea/blockchain.iml
 /.idea/vcs.xml
+
+node_modules
+
+.idea
+

@@ -2,7 +2,7 @@
 TEST_ADDRESS = 'bcrt1qyvnsr3l4wuuen4kznamtjk8zpfjpmfyd0v4t9h'
 
 // kapitalize bitcoin client
-var client = require('kapitalize')()
+const client = require('kapitalize')();
 client
     .auth('fufeng', '123456')
     .set('host', '192.168.3.131')
