@@ -2,10 +2,10 @@ version: '3'
 services:
   mysql:
     container_name: mysql8
-    image: mysql:${MYSQL_VERSION}
+    image: mysql
     restart: always
     ports:
-      - 3309:3306
+      - 3306:3306
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: root
@@ -21,7 +21,7 @@ services:
       --explicit_defaults_for_timestamp=true
       --lower_case_table_names=1
   Redis:
-    container_name: redis6
+    container_name: redis7
     image: redis:${REDIS_VERSION}
     restart: always
     volumes:
@@ -46,7 +46,7 @@ services:
       - ${ETCD_PORT}:2379
       - 2380:2380
   mongo:
-    image: mongo:4.2.1
+    image: mongo
     restart: always
     container_name: mongo
     ports:
@@ -58,30 +58,121 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root  # 账号
       MONGO_INITDB_ROOT_PASSWORD: root123456
-  kafdrop:
-    container_name: kafdrop
-    image: obsidiandynamics/kafdrop
-    restart: "no"
-    ports:
-      - "9000:9000"
-    environment:
-      KAFKA_BROKERCONNECT: "kafka:29092"
-      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
-    depends_on:
-      - "kafka"
+#  kafdrop:
+#    container_name: kafdrop
+#    image: obsidiandynamics/kafdrop
+#    restart: "no"
+#    ports:
+#      - "9000:9000"
+#    environment:
+#      KAFKA_BROKERCONNECT: "kafka:29092"
+#      JVM_OPTS: "-Xms16M -Xmx48M -Xss180K -XX:-TieredCompilation -XX:+UseStringDeduplication -noverify"
+#    depends_on:
+#      - "kafka"
+#  kafka:
+#    container_name: kafka
+#    image: obsidiandynamics/kafka
+#    restart: "no"
+#    ports:
+#      - "2181:2181"
+#      - "9092:9092"
+#    environment:
+#      KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:9092"
+#      KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT"
+#      KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
+#      KAFKA_ZOOKEEPER_SESSION_TIMEOUT: "6000"
+#      KAFKA_RESTART_ATTEMPTS: "10"
+#      KAFKA_RESTART_DELAY: "5"
+#      ZOOKEEPER_AUTOPURGE_PURGE_INTERVAL: "0"
+# https://github.com/provectus/kafka-ui/blob/master/documentation/compose/DOCKER_COMPOSE.md
   kafka:
+    image: 'bitnami/kafka:latest'
     container_name: kafka
-    image: obsidiandynamics/kafka
-    restart: "no"
+    hostname: kafka
     ports:
-      - "2181:2181"
-      - "9092:9092"
+      - '9092:9092'
     environment:
-      KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:9092"
-      KAFKA_ADVERTISED_LISTENERS: "INTERNAL://kafka:29092,EXTERNAL://localhost:9092"
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT"
-      KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
-      KAFKA_ZOOKEEPER_SESSION_TIMEOUT: "6000"
-      KAFKA_RESTART_ATTEMPTS: "10"
-      KAFKA_RESTART_DELAY: "5"
-      ZOOKEEPER_AUTOPURGE_PURGE_INTERVAL: "0"
+      KAFKA_CFG_NODE_ID: 1
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_KRAFT_CLUSTER_ID: "${KAFKA_KRAFT_CLUSTER_ID}"
+      KAFKA_ZOOKEEPER_PROTOCOL: "PLAINTEXT"
+
+      # KRaft 模式配置
+      KAFKA_CFG_PROCESS_ROLES: "controller,broker"
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "1@kafka:29093"
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+
+      # 监听器配置
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT"
+      KAFKA_LISTENERS: "PLAINTEXT://kafka:29092,CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:9092"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092"
+
+      # 显式设置 broker.id（兼容性保障）
+      KAFKA_CFG_BROKER_ID: 1
+
+      # 性能调优（可选）
+      KAFKA_HEAP_OPTS: "-Xmx512m -Xms512m"
+#    volumes:
+#      - ${KAFKA_DIR}/kafka_data:/opt/bitnami  # 必须挂载数据卷
+#  /opt/bitnami/kafka/bin/
+#  /opt/bitnami/kafka/config
+#  kafka-storage.sh format --config /opt/bitnami/kafka/config/kraft/server.properties --cluster-id RDIxOEQyQTRDREVGNEMxQ0
+#  ls   /bitnami/kafka/data
+#  cp /tmp/kraft-combined-logs/meta.properties /bitnami/kafka/data
+#    volumes:
+#      - ${KAFKA_DIR}/kafka_data:/bitnami/kafka/data
+    command:
+      - /bin/bash
+      - -c
+      - |        
+        if [ ! -f /bitnami/kafka/data/meta.properties ]; then \
+        /opt/bitnami/kafka/bin/kafka-storage.sh format \
+          --config /opt/bitnami/kafka/config/kraft/server.properties \
+          --cluster-id $${KAFKA_KRAFT_CLUSTER_ID} \
+          --ignore-formatted
+        cp /tmp/kraft-combined-logs/meta.properties /bitnami/kafka/data
+        fi
+        exec /opt/bitnami/scripts/kafka/run.sh
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8090:8080"
+    depends_on:
+      - kafka
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: kafka:29092
+
+#services:
+#  kafka:
+#    image: bitnami/kafka:latest
+#    container_name: kafka
+#    hostname: kafka
+#    ports:
+#      - '9092:9092'
+#      - '29093:29093'  # 确保控制器端口映射
+#    environment:
+#      KAFKA_ENABLE_KRAFT: "yes"
+#      KAFKA_KRAFT_CLUSTER_ID: "fufeng"  # 使用你指定的集群ID
+#      KAFKA_CFG_NODE_ID: 0
+#      ALLOW_PLAINTEXT_LISTENER: "yes"
+#      # ...其他环境变量保持不变...
+#    volumes:
+#      - ./kafka_data:/bitnami/kafka/data  # 持久化存储
+#    command:
+#      - /bin/bash
+#      - -c
+#      - |
+#        # 初始化存储目录
+#        if [ ! -f /bitnami/kafka/data/meta.properties ]; then
+#          echo "Initializing Kafka storage..."
+#          /opt/bitnami/kafka/bin/kafka-storage.sh format \
+#            --config /opt/bitnami/kafka/config/kraft/server.properties \
+#            --cluster-id $${KAFKA_KRAFT_CLUSTER_ID} \
+#            --ignore-formatted
+#        fi
+#        # 启动服务
+#        /opt/bitnami/scripts/kafka/run.sh
