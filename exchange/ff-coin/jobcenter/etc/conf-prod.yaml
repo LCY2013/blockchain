@@ -1,0 +1,26 @@
+Okx:
+  ApiKey: "d5a748c6-214d-4fae-bef3-d32368ecbbe8"
+  SecretKey: "004148A48D9335E147963C6F5B9C4E63"
+  Pass: "Mszlu!@#$56789"
+  Host: "https://www.okx.com"
+  Proxy: "http://ffcoin-proxy-hs.ffcoin.svc.cluster.local:10809"
+Mongo:
+  Url: "mongodb://ffcoin-mongo-hs.ffcoin.svc.cluster.local:27017"
+  Username: "root"
+  Password: "root123456"
+  DataBase: "ffcoin"
+Kafka:
+  Addr: ffcoin-kafka-hs.ffcoin.svc.cluster.local:9092
+  WriteCap: 100
+  ReadCap: 100
+CacheRedis:
+  - Host: ffcoin-redis-hs.ffcoin.svc.cluster.local:6379
+    Type: node
+UCenterRpc:
+  Etcd:
+    Hosts:
+      - ffcoin-etcd3-hs.ffcoin.svc.cluster.local:2379
+    Key: ucenter.rpc
+  NonBlock: true
+Bitcoin:
+  Address: http://ffcoin-bitcoin-hs.ffcoin.svc.cluster.local:18332

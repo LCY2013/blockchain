@@ -1,0 +1,17 @@
+Name: exchange-api
+Host: 0.0.0.0
+Port: 8890
+Prefix: "/exchange"
+JWT:
+  AccessSecret: "!@#$ffcoin"
+  AccessExpire: 604800
+ExchangeRpc:
+  Etcd:
+    Hosts:
+      - ffcoin-etcd3-hs.ffcoin.svc.cluster.local:2379
+    Key: exchange.rpc
+Kafka:
+  Addr: ffcoin-kafka-hs.ffcoin.svc.cluster.local:9092
+  WriteCap: 100
+  ReadCap: 100
+  ConsumerGroup: "kline1m-thumb-consumer"
