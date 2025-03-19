@@ -9,7 +9,7 @@ services:
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: zero_mall
+      MYSQL_DATABASE: fufeng123456
     volumes:
       - ${MYSQL_DIR}/data:/var/lib/mysql
       - ${MYSQL_DIR}/conf:/etc/mysql/conf.d/
