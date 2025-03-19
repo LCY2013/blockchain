@@ -1,0 +1,908 @@
+.swap {
+    width: 100%;
+    height: 100%;
+    /* float: left; */
+    padding: 30px 0px 0 0;
+    /* color: #BCD7E6; */
+    background: #263142;
+    padding-top: 60px;
+}
+
+.swap .sidebar {
+    width: 22%;
+    float: left;
+    background: #18202A;
+    padding-bottom: 10px;
+}
+
+.swap .sc {
+    padding: 16px 8%;
+    height: 50px;
+}
+
+.swap .sc_thead span {
+    display: inline-block;
+    height: 27px;
+    line-height: 27px;
+    margin-right: 16%;
+    position: relative;
+    cursor: pointer;
+}
+
+.swap .sc_thead i {
+    position: absolute;
+}
+
+.swap .ivu-icon-arrow-up-b {
+    top: 5px;
+}
+
+.swap .sc_thead {
+    font-size: 9px;
+    padding: 0 7%;
+}
+
+.swap .sidebar .ivu-table-body tr:hover {
+    background: #262A42;
+    cursor: pointer;
+}
+
+.swap .sc_filter {
+    /* padding: 0 7%; */
+    white-space: nowrap;
+    overflow-x: auto;
+    font-size: 0;
+    background-color: #192330;
+    border-bottom: 1px solid #27313e;
+}
+
+.swap .day .sc_filter {
+    background-color: #fff;
+    margin-right: -2px;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.swap .sc_filter span {
+    padding: 0 3px;
+    margin: 0 10px;
+    font-size: 13px;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+    line-height: 35px;
+    background-color: #192330;
+}
+
+.swap .day .sc_filter span {
+    display: inline-block;
+    color: #333;
+    background-color: #fafafa;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.swap .sc_filter>span:first-child {
+    border-top-left-radius: 0px;
+}
+
+.swap .sc_filter>span:last-child {
+    border-top-right-radius: 0px;
+}
+
+.swap .sc_filter span.active,
+.swap .sc_filter i.active {
+    border-bottom: 2px solid #f0a70a;
+}
+
+.swap .day .sc_filter span.active,
+.swap .day .sc_filter i.active {
+    background-color: #fff;
+    /* border-right: 1px solid #ccc; */
+    color: #f0a70a;
+}
+
+.swap .coin-menu .ivu-table td.coin-menu-symbol {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.swap .coin-menu .coin-menu-symbol .ivu-icon {
+    color: #f0a70a;
+    margin-right: 10px;
+}
+
+.swap .ivu-icon {
+    cursor: pointer;
+}
+
+.swap .sc_filter span {
+    /* margin-right: 16%; */
+}
+
+.swap .sc_table th {
+    cursor: pointer;
+}
+
+.swap .sc_table .ivu-table-body tr:hover {
+    background: #262A42;
+    cursor: pointer;
+}
+
+.swap span.price {
+    margin: 0;
+}
+
+.swap .buy {
+    color: #00b275 !important;
+}
+
+.swap .sell {
+    color: #f15057 !important;
+}
+
+.swap .kline {
+    float: right;
+    width: 77%;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.swap #chart_parameter_settings {
+    right: 0 !important;
+}
+
+.swap #swap_kline_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 446px;
+    border-radius: 0px;
+}
+
+.swap #swap_kline_container.hidden,
+.swap #depth_chart.hidden {
+    z-index: -100;
+}
+
+.swap #depth_chart {
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    border-radius: 6px;
+}
+
+.swap .trade_container dark hide {
+    display: none;
+}
+
+.swap .trade_panel {
+    float: left;
+    width: 100%;
+    background: #192330;
+}
+
+.swap .day .trade_panel {
+    background-color: #fff;
+}
+
+.swap .sc,
+.swap .mod_hd,
+.swap .trade_hd,
+.swap .order_book_hd,
+.swap .open_orders_hd,
+.swap .deal_record_hd {
+    padding: 0 30px;
+    height: 50px;
+    line-height: 48px;
+    background: #1B1E2E;
+    font-size: 16px;
+}
+
+.swap .trade_hd ul li {
+    float: left;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.swap .trade_hd .feesRate {
+    float: right;
+}
+
+.swap .trade_bd {
+    padding: 0 30px;
+}
+
+.swap .trade_bd .panel {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 50%;
+    height: 325px;
+    margin-top: 0;
+    margin-right: 0;
+    border: 0 solid transparent;
+    padding-top: 10px;
+}
+
+.swap .mod_tab li.active {
+    border-bottom: 1px solid #7A98F7;
+    color: #7A98F7;
+}
+
+.swap .trade_panel .panel .hd {
+    line-height: 20px;
+    height: 20px;
+    border-bottom: 1px solid #1F2943;
+    margin-bottom: 5px;
+}
+
+.swap .trade_panel .panel .hd span {
+    padding-left: 0;
+    font-size: 12px;
+    margin: 0 3px;
+    float:right;
+}
+
+.trade_panel .panel .hd b {
+    padding-left: 0;
+    font-size: 12px;
+    color: #7A98F7;
+    float:right;
+}
+
+.swap .trade_panel .panel .hd.hd_login a {
+    float: right;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.swap .trade_panel .panel.panel_buy {
+    padding-right: 15px;
+}
+
+.swap .trade_panel .panel.panel_sell {
+    padding-left: 15px;
+}
+
+.swap .trade_wrap .ivu-input {
+    background: #000;
+    border: 1px solid #27313e;
+    color: #fff;
+    height: 40px;
+    text-indent: 25px;
+    border-radius: 0;
+}
+
+.swap .trade_wrap .ivu-input-wrapper {
+    outline: none;
+}
+
+.swap .trade_wrap .ivu-input:focus,
+.swap .trade_wrap .ivu-input:hover {
+    box-shadow: none;
+    border-color: #41546d;
+    outline: none;
+}
+
+.swap .order .ivu-table-wrapper .ivu-table .ivu-table-header th {
+    background-color: #27313e;
+}
+
+.swap .day .trade_wrap .ivu-input {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.swap .trade_wrap .ivu-form-item-content input{
+    padding-left: 50px;
+}
+.swap .trade_wrap .ivu-form-item-content label.before {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    color: #7c7f82;
+    z-index: 2;
+}
+
+.swap .trade_wrap .ivu-form-item-content label.after {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    color: #7c7f82;
+}
+
+.swap p.math_price {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-top: -1px;
+    font-size: 12px;
+    text-align: right;
+    color: #7c7f82;
+}
+
+.swap .total {
+    margin-bottom: 10px;
+    height: 20px;
+    color: #7c7f82;
+}
+
+.swap .trade_bd Button {
+    width: 100%;
+    border: 0;
+    color: #fff;
+}
+
+.swap .position_table Button {
+    border: 0;
+    padding: 2px 5px;
+    color: #fff;
+}
+
+.swap Button.bg-red {
+    background-color: #f15057;
+}
+
+.swap Button.bg-green {
+    background-color: #00b275;
+}
+
+.swap .trade_bd Button.bg-gray {
+    background-color: #35475b;
+    cursor: not-allowed;
+    color: #9fabb5;
+}
+.swap .trade_bd Button.bg-gray:hover{
+    color: #9fabb5!important;
+}
+.swap .trade_bd Button:hover {
+    /* background: #54679F; */
+}
+
+.swap .order_book {
+    float: right;
+    width: 34%;
+    height: 430px;
+    background: #18202A;
+    margin-bottom: 15px;
+}
+
+.swap .order_book_hd {
+    height: 50px;
+}
+
+.swap .order_book_hd b {
+    color: #BCD7E6;
+}
+
+.swap .ivu-table th,
+.swap .ivu-table td {
+    background: none;
+    border: 0;
+}
+
+.swap .ivu-table-expanded-cell {
+    background: #141724 !important;
+}
+
+.swap.day .ivu-table-expanded-cell {
+    background: #f8f8f9 !important;
+}
+
+.swap .order .ivu-table-cell-expand {
+    color: #f0a70a;
+}
+
+.swap .ivu-table th {
+    cursor: pointer;
+}
+
+.swap .ivu-table th span {
+    color: #61688A;
+}
+
+
+/* .order_book .ivu-table th:first-child span{
+    color:#18202A;
+} */
+
+.ivu-table-row-highlight td,
+.ivu-table-stripe .ivu-table-body tr.ivu-table-row-highlight:nth-child(2n) td,
+.ivu-table-stripe .ivu-table-fixed-body tr.ivu-table-row-highlight:nth-child(2n) td,
+tr.ivu-table-row-highlight.ivu-table-row-hover td {
+    background: #262A42;
+}
+
+.order_book .ivu-table .ivu-table-body tr:hover {
+    background: #262A42;
+    cursor: pointer;
+}
+
+.main .trade-wrap .ivu-table {
+    border-radius: 6px;
+}
+
+.swap .ivu-table th,
+.swap .ivu-table td {
+    height: 30px;
+    text-align: center;
+}
+
+.swap .sidebar .ivu-table th,
+.swap .sidebar .ivu-table td {
+    height: 35px;
+}
+
+.swap .ivu-table td span {
+    /* color: #BCD7E6; */
+}
+
+.swap.day .ivu-table td span {
+    color: #333;
+}
+
+.swap .ivu-table td .ivu-btn-warning span {
+    color: #fff;
+}
+
+.swap .ivu-table-cell {
+    padding: 0;
+}
+
+.ivu-table-sort {
+    height: 14px;
+}
+
+.buy_table {
+    /* border-top: 2px solid #1F2943 !important; */
+    min-height: 200px;
+}
+
+.buy_table.hidden .ivu-table-header {
+    display: none;
+}
+
+.open_orders {
+    float: left;
+    width: 64%;
+    min-height: 400px;
+    background: #18202A;
+    margin-bottom: 15px;
+}
+
+.open_orders .ivu-select-item {
+    color: #fff;
+}
+
+.open_orders .ivu-table .ivu-table-body tr:hover {
+    background: #262A42;
+}
+
+.depth_graph {
+    float: left;
+    width: 64%;
+    min-height: 550px;
+    background: #18202A;
+}
+
+.depth_graph_hd {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 30px;
+}
+
+.depth_graph_ct {
+    padding-left: 30px;
+    height: 500px;
+}
+
+.mod_hd {
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.mod_hd dl dt {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mod_hd dl dd {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.swap .kline .ivu-table button span {
+    color: #fff;
+}
+
+.swap .deal_record {
+    float: right;
+    width: 34%;
+    height: 550px;
+    background: #18202A;
+}
+
+.swap .deal_record .ivu-table-body {
+    overflow: hidden;
+}
+
+.swap .history {
+    float: left;
+}
+
+.swap .history li {
+    float: left;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.swap .history li.active {
+    color: #7A98F7
+}
+
+.swap .open_orders_hd .ivu-select {
+    float: right;
+    width: 100px;
+}
+
+.swap .open_orders_hd .ivu-select-selection {
+    margin-top: 12px;
+    background: #1B1E2E;
+}
+
+.swap .trade_wrap .ivu-btn {
+    font-size: 16px;
+    padding: 8px 15px;
+    color: #fff;
+}
+.swap .trade_wrap .ivu-btn.disabled-btn{
+    font-size: 14px;
+    color: #ccc;
+    padding: 10px 16px;
+}
+.swap .trade_wrap .ivu-btn.disabled-btn:hover{
+    font-size: 14px;
+    color: #ccc;
+    padding: 10px 16px;
+}
+.swap .trade_wrap .ivu-btn:hover {
+    color: #fff;
+}
+.swap .trade_wrap .ivu-btn.ivu-btn-default:hover {
+    color: #fff;
+}
+
+
+.swap iframe {
+    height: 434px !important;
+}
+
+.swap #tradingview_188a1 {
+    height: 350px;
+}
+
+
+.swap .ivu-table-wrapper {
+    box-shadow: none;
+    border: 0;
+}
+
+.swap .ivu-table-wrapper tbody.ivu-table-tbody .ivu-table-row td {
+    background-color: transparent;
+}
+
+
+/* .day .swap .coin-menu .ivu-table-wrapper{
+    box-shadow: 0 0 2px #ccc;
+} */
+
+.swap .ivu-table {
+    background: none;
+    color: #fff;
+}
+
+.swap .ivu-table:before,
+.swap .ivu-table:after {
+    display: none;
+}
+
+.swap .ivu-input[disabled],
+.swap fieldset[disabled] .ivu-input {
+    border-color: transparent !important;
+    cursor: unset !important;
+    background: #202437;
+}
+
+.swap.day .ivu-input[disabled] {
+    border-color: #ccc !important;
+    background-color: #fff;
+}
+
+.swap .ivu-input[disabled]:hover {
+    border-color: transparent !important;
+}
+
+.swap.day .ivu-input[disabled]:hover {
+    border-color: #ccc !important;
+}
+
+.swap .ivu-select-dropdown {
+    background: #0b0d1b;
+}
+
+.swap .main .ivu-table .ivu-table-header th {
+    line-height: 30px;
+    background-color: #192330;
+    border-bottom: 1px solid #27313e;
+}
+
+.swap.day .ivu-table .ivu-table-header th {
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.swap .ivu-table {
+    background-color: #192330;
+}
+
+.swap.day .ivu-table {
+    background-color: #fff;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-row td {
+    border-bottom: 1px solid #27313e;
+    border-color: #27313e;
+}
+
+.swap.day .ivu-table-wrapper .ivu-table .ivu-table-row td {
+    border-bottom: 1px solid #f0f0f0;
+    border-color: #f0f0f0;
+}
+
+.swap .buy_table .ivu-table .ivu-table-row:nth-last-child(1) td {
+    border-bottom: none;
+}
+.swap .sell_table{
+    min-height: 232px;
+}
+.swap .buy_table .ivu-table .ivu-table-row td, .swap .sell_table .ivu-table .ivu-table-row td{
+    height: 20px !important;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+.swap .sell_table .ivu-table .ivu-table-row:nth-last-child(1) td {
+    border-bottom: none;
+}
+.swap .order .ivu-table-tip td {
+    height: 144px;
+}
+
+.swap .coin-menu td {
+    cursor: pointer;
+}
+
+.swap .order .linkmore {
+    float: right;
+    color: #f0a70a;
+    font-size: 14px;
+    line-height: 33px;
+    margin-right: 20px;
+}
+
+
+/* 滑块样式 */
+
+.swap .ivu-slider-wrap {
+    height: 6px;
+    margin: 0;
+}
+
+.swap .slider-wrap {
+    position: relative;
+    margin: 30px 0 16px 0;
+}
+
+.swap .slider-wrap .slider-stop {
+    position: absolute;
+    top: -5px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+}
+
+.swap .slider-wrap .slider-block {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 6px;
+}
+
+.swap .ivu-slider-bar {
+    z-index: 100;
+}
+
+.swap .ivu-slider-button-wrap {
+    z-index: 101;
+}
+
+.swap .silder-buy .ivu-slider-bar {
+    height: 6px;
+    background: #00b275;
+}
+
+.swap .silder-buy .ivu-slider-button {
+    border-color: #00b275;
+}
+
+.swap .silder-sell .ivu-slider-bar {
+    height: 6px;
+    background: #f15057;
+}
+
+.swap .silder-sell .ivu-slider-button {
+    border-color: #f15057;
+}
+
+.swap .ivu-slider-stop {
+    width: 6px;
+    height: 6px;
+}
+
+.swap .slider-wrap .ivu-tooltip-popper {
+    padding: 0;
+}
+
+.swap .slider-wrap .ivu-tooltip-arrow {
+    display: none;
+}
+
+.swap.day .ivu-tooltip-inner {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.swap .slider-wrap .ivu-tooltip-inner {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    min-height: 0;
+    margin-bottom: 3px;
+    background-color: transparent;
+}
+
+.swap .bd_market .ivu-btn {
+    margin-top: 20px;
+}
+
+.swap .bd_limited .ivu-form-item {
+    margin-bottom: 10px;
+}
+
+.swap.day .ivu-tooltip-popper .ivu-tooltip-arrow {
+    border-top-color: rgba(217, 217, 217, .5);
+}
+
+.swap.day .ivu-tooltip-popper .ivu-tooltip-arrow:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 1px;
+    content: "";
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    margin-left: -5px;
+    border-top-width: 5px;
+    border-bottom-width: 0;
+    border-top-color: #fff;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-row {
+    position: relative;
+}
+
+.swap .right .ivu-table-wrapper .ivu-table .ivu-table-row.ivu-table-row-hover td{
+  background: #273344!important;
+}
+.swap .ivu-table-wrapper .ivu-table .ivu-table-row td.percenttd {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-header {
+    background-color: #192330;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-header th.percenttd {
+    display: none;
+    font-size: 0;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-row td.percenttd .ivu-table-cell {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.swap .ivu-table-wrapper .ivu-table .ivu-table-row td.percenttd .percentdiv {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    opacity: .2;
+}
+
+.swap.day .ivu-table-wrapper .ivu-table .ivu-table-row td.percenttd .percentdiv {
+    opacity: .1;
+}
+.swap .order .ivu-table td{
+    height: 40px;
+}
+
+.lightning-panel{
+    height:264px;width:100%;z-index:2;background:#003478;margin-bottom: 10px;
+}
+.lightning-panel img{
+    width: 100%;
+}
+.lightning-panel .l-content{
+    position:absolute;top:110px;width:100%;text-align:center;
+}
+.lightning-panel .l-content .l-title{
+    border: 1px solid rgb(176, 186, 194);
+    padding: 3px 10px;
+    /* border-radius: 3px; */
+    /* width: 30%; */
+    color: #d3d9e1;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.lightning-panel .l-content .l-info{
+    margin-top: 15px;
+}
+.lightning-panel .l-content .l-detail{
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #29a6ff;
+}
+.lightning-panel .l-content .l-detail span:hover{
+    color: #6bc0fd;
+    cursor: pointer;
+}
+.lightning-panel .l-content .l-info .l-count{
+    font-size: 14px;
+}
+.lightning-panel .l-content .l-info .l-txt{
+    font-size: 12px;
+}
+.lightning-panel .l-content .l-info .l-txt:nth-child(2){
+    margin-left: 10px;
+}
+.lightning-panel .l-content .l-info .l-price{
+    font-size: 14px;
+}
+.lightning-panel .l-content .l-info .l-unit{
+    font-size: 8px;
+}
