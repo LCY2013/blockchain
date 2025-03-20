@@ -3,8 +3,8 @@ module github.com/LCY2013/blockchain/exchange/ff-coin/market-api
 go 1.24
 
 require (
-	github.com/LCY2013/blockchain/exchange/ff-coin/ffcoin-common v0.0.0-20250319074234-ec17a0af0faa
-	github.com/LCY2013/blockchain/exchange/ff-coin/grpc-common v0.0.0-20250319074234-ec17a0af0faa
+	github.com/LCY2013/blockchain/exchange/ff-coin/ffcoin-common v0.0.0-20250319135548-3c33e5c69a48
+	github.com/LCY2013/blockchain/exchange/ff-coin/grpc-common v0.0.0-20250319135548-3c33e5c69a48
 	github.com/googollee/go-socket.io v1.7.0
 	github.com/jinzhu/copier v0.4.0
 	github.com/segmentio/kafka-go v0.4.47
