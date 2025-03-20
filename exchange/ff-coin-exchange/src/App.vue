@@ -638,7 +638,7 @@ export default {
       .layout-ceiling {
         padding: 5px 20px;
         .layout-logo{
-          width: 300px;
+          width: 100px;
           height: 48px;
           background: url(./assets/images/logo.png) no-repeat;
           background-size: 100% 100%;
@@ -757,7 +757,7 @@ export default {
         }
         .rightwrapper {
           float: right;
-          .appdownload {
+          .app-download {
             float: left;
             // padding: 0 20px;
             padding-right: 0px;
@@ -860,7 +860,7 @@ export default {
       }
       .rightwrapper {
         float: right;
-        .appdownload {
+        .app-download {
           float: left;
           // padding: 0 20px;
           padding-right: 30px;
@@ -1062,7 +1062,7 @@ export default {
         .rightwrapper {
           display: none;
           float: right;
-          .appdownload {
+          .app-download {
             float: left;
             // padding: 0 20px;
             padding-right: 0px;
@@ -1170,16 +1170,16 @@ export default {
     }
   }
 }
-.appdownload {
-  /deep/ .ivu-poptip-inner {
+.app-download {
+  ::v-deep .ivu-poptip-inner {
     background-color: #27313e;
     color: #fff;
     padding-top: 10px;
   }
-  /deep/ .ivu-poptip-popper .ivu-poptip-arrow {
+  ::v-deep .ivu-poptip-popper .ivu-poptip-arrow {
     border-bottom-color: #27313e;
   }
-  /deep/ .ivu-poptip-popper .ivu-poptip-arrow:after {
+  ::v-deep .ivu-poptip-popper .ivu-poptip-arrow:after {
     border-bottom-color: #27313e;
   }
 }
@@ -1680,6 +1680,7 @@ body {
 .footer_left img {
   margin: 15px 0;
   width: 300px;
+  height: 47px;
 }
 
 .footer_left p {

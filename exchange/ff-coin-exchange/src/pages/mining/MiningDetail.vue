@@ -650,7 +650,7 @@ export default {
                                 height: 0;
                             }
                         }
-                        /deep/.image-desc{
+                        ::v-deep.image-desc{
                           img{
                             width: 100%!important;
                           }

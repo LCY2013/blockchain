@@ -2876,8 +2876,8 @@ export default {
 $night-bg: #0b1520;
 $night-headerbg: #27313e;
 $night-contentbg: #192330;
-$night-color: #fff;
-/deep/.ivu-slider {
+:root { $night-color: #fff; }
+::v-deep.ivu-slider {
   .ivu-slider-wrap {
     height: 10px;
     border-radius: 0px;
@@ -2910,7 +2910,7 @@ $night-color: #fff;
     }
   }
 }
-/deep/.v-transfer-dom {
+::v-deep.v-transfer-dom {
   .ivu-modal-wrap {
     .ivu-modal {
       .ivu-modal-content {
@@ -2965,7 +2965,7 @@ $night-color: #fff;
   background: rgb(240, 172, 25);
   box-shadow: none;
 }
-/deep/.v-transfer-dom {
+::v-deep.v-transfer-dom {
   .ivu-modal-wrap {
     .ivu-modal {
       top: 30%;
@@ -2994,7 +2994,7 @@ $night-color: #fff;
 .swap .order {
   margin-bottom: 5px !important;
 }
-/deep/.ivu-input-group .ivu-input {
+::v-deep.ivu-input-group .ivu-input {
   color: #f0ac19;
 }
 

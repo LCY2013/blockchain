@@ -1086,7 +1086,7 @@ button.ivu-btn.ivu-btn-primary{
 .sfz_bottom{
   height: auto;
 }
-/deep/.ivu-form{
+::v-deep.ivu-form{
   .ivu-form-item{
     .ivu-form-item-content{
       margin-left: 0px!important;

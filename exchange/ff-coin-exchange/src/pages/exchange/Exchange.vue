@@ -300,7 +300,7 @@
 $night-bg: #0b1520;
 $night-headerbg: #27313e;
 $night-contentbg: #192330;
-$night-color: #fff;
+:root { $night-color: #fff; }
 
 .exchange {
   color: #fff;

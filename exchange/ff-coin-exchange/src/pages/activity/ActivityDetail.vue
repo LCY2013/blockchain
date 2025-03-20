@@ -840,7 +840,7 @@ export default {
                                 height: 0;
                             }
                         }
-                        /deep/.image-desc{
+                        ::v-deep.image-desc{
                           img{
                             width: 100%!important;
                           }
@@ -1035,9 +1035,11 @@ export default {
         font-size: 14px;
         color: #5f5f5f;
     }
-    .ivu-input[disabled]:hover,
-    fieldset[disabled] .ivu-input:hover {
-      border-color: #27313e;
-    }
+    .ivu-input {
+        &[disabled]:hover,
+        fieldset[disabled] &:hover {
+          border-color: #27313e;
+        }
+      }
 }
 </style>

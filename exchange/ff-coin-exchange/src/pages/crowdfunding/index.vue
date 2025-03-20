@@ -1630,7 +1630,7 @@ export default {
       font-size: 14px;
     }
 
-    /deep/.ivu-radio-group{
+    ::v-deep.ivu-radio-group{
       .ivu-radio-wrapper{
         color: #000;
         .ivu-radio-checked {
@@ -1643,26 +1643,26 @@ export default {
         }
       }
     }
-    /deep/.ivu-upload{
+    ::v-deep.ivu-upload{
       .ivu-btn{
         .ivu-btn-default{
           background-color: #f5f5f5;
         }
       }
     }
-    /deep/.ivu-input-wrapper{
+    ::v-deep.ivu-input-wrapper{
       .ivu-input{
         background-color: #f5f5f5;
         color: #000;
         border-color: #f5f5f5;
       }
     }
-    /deep/.yanse{
+    ::v-deep.yanse{
       .ivu-input{
         color: #FD4E17!important;
       }
     }
-    /deep/.yanse2{
+    ::v-deep.yanse2{
       position: relative;
       top: 30px;
       .ivu-input{
@@ -1675,11 +1675,11 @@ export default {
         border-radius: 10px;
       }
     }
-    /deep/.ivu-icon{
+    ::v-deep.ivu-icon{
       position: relative;
       top: -1px;
     }
-    /deep/.ivu-input-group {
+    ::v-deep.ivu-input-group {
       .ivu-input-group-append{
         background-color: #fff;
         border-bottom: 1px solid #fff;
@@ -1687,17 +1687,17 @@ export default {
         border: 1px solid #fff;
       }
     }
-    /deep/.ivu-card{
+    ::v-deep.ivu-card{
       cursor: pointer;
       border-radius: 30px;
       border: 2px solid #fff;
     }
-    /deep/.ivu-card:hover{
+    ::v-deep.ivu-card:hover{
       border: 2px solid #0071FE;
       position: relative;
       top: -15px;
     }
-    /deep/.tabs1{
+    ::v-deep.tabs1{
       .ivu-tabs-bar{
         .ivu-tabs-nav-container{
           .ivu-tabs-nav-wrap{
@@ -1716,7 +1716,7 @@ export default {
         }
       }
     }
-    /deep/.tabs2{
+    ::v-deep.tabs2{
       .ivu-tabs-bar{
         .ivu-tabs-nav-container{
           .ivu-tabs-nav-wrap{
@@ -2360,7 +2360,7 @@ white-space:nowrap;
   .swiper-container{
     min-height: 250px;
   }
-  /deep/.tabs1{
+  ::v-deep.tabs1{
       .ivu-tabs-bar{
         .ivu-tabs-nav-container{
           .ivu-tabs-nav-wrap{
@@ -2387,7 +2387,7 @@ white-space:nowrap;
         }
       }
     }
-  /deep/.tabs2{
+  ::v-deep.tabs2{
       .ivu-tabs-bar{
         .ivu-tabs-nav-container{
           .ivu-tabs-nav-wrap{
@@ -2413,7 +2413,7 @@ white-space:nowrap;
         }
       }
     }
-  /deep/.yanse2{
+  ::v-deep.yanse2{
       position: relative;
       top: 30px;
       .ivu-input{
