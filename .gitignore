@@ -508,3 +508,4 @@ build
 
 node_modules
 /exchange/ff-coin/docker/
+/exchange/ff-coin/jobcenter/etc/mykey.md
