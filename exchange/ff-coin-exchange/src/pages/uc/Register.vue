@@ -368,7 +368,7 @@ export default {
 	  var that = this;
 	  vaptcha().then((vaptcha) => {
 		  vaptcha({
-		        vid: '63fec1c3507890ee2e7f9dd1',
+		        vid: '67dbb2bddc0ff12924d9b944',
 		        mode: 'click',
 		        scene: 2,
 				container: '#VAPTCHAContainer',

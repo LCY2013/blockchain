@@ -10,8 +10,8 @@ CacheRedis:
   - Host: 127.0.0.1:6379
     Type: node
 Captcha:
-  Vid: 63fec1c3507890ee2e7f9dd1
-  Key: ca8f1bdc1ee5438b830aac9beef314e9
+  Vid: 67dbb2bddc0ff12924d9b944
+  Key: 181ea093335e48f4a023d818af12c905
 JWT:
   AccessSecret: "!@#$ffcoin"
   AccessExpire: 604800
